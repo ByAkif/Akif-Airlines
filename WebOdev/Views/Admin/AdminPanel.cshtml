@@ -1,0 +1,27 @@
+﻿@model List<Route>
+
+@{
+    ViewData["Title"] = "Admin Paneli";
+}
+
+<h2>Admin Paneli</h2>
+
+<p>Admin olarak giriş yaptınız. Bu sayfada yönetim işlemlerini gerçekleştirebilirsiniz.</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Güzergah Adı</th>
+            <th>Uçak Bilgisi</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var route in Model)
+        {
+            <tr>
+                <td>@route.RouteName</td>
+                <td>@route.Aircraft.AircraftName</td>
+            </tr>
+        }
+    </tbody>
+</table>
