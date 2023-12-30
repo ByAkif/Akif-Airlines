@@ -1,14 +1,42 @@
-﻿namespace WebOdev.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace WebOdev.Models
 {
     public class Bilet
     {
-        public int Id { get; set; }
-        public string KoltukNumarasi { get; set; }
-        public string Ad { get; set; }
-        public string Soyad { get; set; }
-        public string GidisNoktasi { get; set; }
-        public string VarisNoktasi { get; set; }
-        public DateTime KalkisTarihi { get; set; }
-    }
+        [Key]
+        public int BiletId { get; set; }
 
+        [Required(ErrorMessage = "Kalkış yeri giriniz.")]
+        [Display(Name = "Kalkış Yeri")]
+        public string KalkisYeri { get; set; }
+
+        [Required(ErrorMessage = "Varış yeri giriniz.")]
+        [Display(Name = "Varış Yeri")]
+        public string VarisYeri { get; set; }
+
+        [Required(ErrorMessage = "Gidiş tarihi giriniz.")]
+        [Display(Name = "Gidiş Tarihi")]
+        [DataType(DataType.Date)]
+        public string GidisTarihi { get; set; }
+
+        [Required(ErrorMessage = "Dönüş tarihi giriniz.")]
+        [Display(Name = "Dönüş Tarihi")]
+        [DataType(DataType.Date)]
+        public string DonusTarihi { get; set; }
+
+        [Required(ErrorMessage = "Kalkış saati giriniz.")]
+        [Display(Name = "Kalkış Saati")]
+        public string KalkisSaat { get; set; }
+
+        public int UcakId { get; set; }
+
+        public virtual Ucak Ucak { get; set; }
+
+        [Required(ErrorMessage = "Koltuk numarası seciniz.")]
+        [Display(Name = "Koltuk Numarası")]
+        public int koltukNo { get; set; }
+
+
+    }
 }
