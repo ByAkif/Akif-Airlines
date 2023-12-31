@@ -9,10 +9,12 @@ namespace WebOdev.Models
         {
             optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb; Database=WebOdev;Trusted_Connection=True;");
         }
+
         public DbSet<Ucak> Ucaklar { get; set; }
         public DbSet<Bilet> Biletler { get; set; }
-        public DbSet<Admin> Adminler { get; set; }
+        public DbSet<Admin> AdminLogin { get; set; }
         public DbSet<User> Users { get; set; }
+
 
     }
 }

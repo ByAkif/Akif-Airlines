@@ -1,0 +1,46 @@
+﻿@model WebOdev.Models.Ucak
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Ucak</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UcakAdi)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UcakAdi)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.KoltukSayisi)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.KoltukSayisi)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Fiyat)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Fiyat)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.doluKoltukSayisi)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.doluKoltukSayisi)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="UcakId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

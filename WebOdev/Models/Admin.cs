@@ -9,12 +9,12 @@ namespace WebOdev.Models
 
         [Required(ErrorMessage = "Lütfen kullanıcı adınızı giriniz.")]
         [Display(Name = "Kullanıcı Adı")]
-        public string Username { get; set; } = string.Empty;
+        public string AdminName { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "Lütfen şifrenizi giriniz.")]
         [Display(Name = "Şifre")]
         [DataType(DataType.Password)]
-        public string? Password { get; set; }
+        public string Password { get; set; }
 
     }
 }

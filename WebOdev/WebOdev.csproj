@@ -7,10 +7,85 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <_ContentIncludedByDefault Remove="wwwroot\css\deneme.css" />
+    <None Include="wwwroot\css\animate.css" />
+    <None Include="wwwroot\css\bootstrap.css" />
+    <None Include="wwwroot\css\custom.css" />
+    <None Include="wwwroot\css\export.css" />
+    <None Include="wwwroot\css\font-awesome.css" />
+    <None Include="wwwroot\css\graph.css" />
+    <None Include="wwwroot\css\jqcandlestick.css" />
+    <None Include="wwwroot\css\monthly.css" />
+    <None Include="wwwroot\css\owl.carousel.css" />
+    <None Include="wwwroot\css\SidebarNav.min.css" />
+    <None Include="wwwroot\css\style.css" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.eot" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.ttf" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.woff" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\fonts\FontAwesome.otf" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="wwwroot\images\1.jpg" />
+    <None Include="wwwroot\images\2.jpg" />
+    <None Include="wwwroot\images\3.jpg" />
+    <None Include="wwwroot\images\4.jpg" />
+    <None Include="wwwroot\images\a.png" />
+    <None Include="wwwroot\images\i1.png" />
+    <None Include="wwwroot\images\i2.png" />
+    <None Include="wwwroot\images\i3.png" />
+    <None Include="wwwroot\images\i4.png" />
+    <None Include="wwwroot\images\img-sprite.png" />
+    <None Include="wwwroot\images\img1.png" />
+    <None Include="wwwroot\images\lock.png" />
+    <None Include="wwwroot\images\mail.png" />
+    <None Include="wwwroot\images\search-icon.png" />
+    <None Include="wwwroot\images\slider1.jpg" />
+    <None Include="wwwroot\images\slider2.jpg" />
+    <None Include="wwwroot\images\slider3.jpg" />
+    <None Include="wwwroot\images\slider4.jpg" />
+    <None Include="wwwroot\images\slider5.jpg" />
+    <None Include="wwwroot\images\slider6.jpg" />
+    <None Include="wwwroot\images\slider7.jpg" />
+    <None Include="wwwroot\images\tick.png" />
+    <None Include="wwwroot\images\user.png" />
+    <None Include="wwwroot\images\weather.jpg" />
+    <None Include="wwwroot\js\amcharts.js" />
+    <None Include="wwwroot\js\bootstrap.js" />
+    <None Include="wwwroot\js\Chart.bundle.js" />
+    <None Include="wwwroot\js\Chart.js" />
+    <None Include="wwwroot\js\Chart.min.js" />
+    <None Include="wwwroot\js\chartinator.js" />
+    <None Include="wwwroot\js\classie.js" />
+    <None Include="wwwroot\js\custom.js" />
+    <None Include="wwwroot\js\export.min.js" />
+    <None Include="wwwroot\js\images\dragIconRoundBig.svg" />
+    <None Include="wwwroot\js\images\lens.svg" />
+    <None Include="wwwroot\js\index.js" />
+    <None Include="wwwroot\js\index1.js" />
+    <None Include="wwwroot\js\index2.js" />
+    <None Include="wwwroot\js\jquery-1.11.1.min.js" />
+    <None Include="wwwroot\js\jquery.flot.js" />
+    <None Include="wwwroot\js\jquery.jqcandlestick.min.js" />
+    <None Include="wwwroot\js\jquery.nicescroll.js" />
+    <None Include="wwwroot\js\light.js" />
+    <None Include="wwwroot\js\metisMenu.min.js" />
+    <None Include="wwwroot\js\modernizr.custom.js" />
+    <None Include="wwwroot\js\monthly.js" />
+    <None Include="wwwroot\js\owl.carousel.js" />
+    <None Include="wwwroot\js\pie-chart.js" />
+    <None Include="wwwroot\js\scripts.js" />
+    <None Include="wwwroot\js\serial.js" />
+    <None Include="wwwroot\js\SidebarNav.min.js" />
+    <None Include="wwwroot\js\SimpleChart.js" />
+    <None Include="wwwroot\js\utils.js" />
+    <None Include="wwwroot\js\validator.min.js" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.23" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.25" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.25">
       <PrivateAssets>all</PrivateAssets>

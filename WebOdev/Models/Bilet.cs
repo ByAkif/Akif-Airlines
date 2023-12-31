@@ -35,8 +35,8 @@ namespace WebOdev.Models
 
         [Required(ErrorMessage = "Koltuk numarası seciniz.")]
         [Display(Name = "Koltuk Numarası")]
-        public int koltukNo { get; set; }
-
+       
+        public ICollection<Koltuk> Koltuklar { get; set; }
 
     }
 }
