@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using System.Configuration;
-using WebOdev.Models;
+using Web12412412.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +30,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
 	name: "default",
-	pattern: "{controller=Admin}/{action=Index}/{id?}");
+	pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

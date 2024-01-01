@@ -1,0 +1,67 @@
+﻿@model Web12412412.Models.Ucus
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Ucus</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nereden)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nereden)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nereye)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nereye)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GidisTarihi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GidisTarihi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DonusTarihi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DonusTarihi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KalkisSaat)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KalkisSaat)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VarisSaat)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VarisSaat)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.doluKoltukSayisi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.doluKoltukSayisi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ucak)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ucak.UcakAdi)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.UcusId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

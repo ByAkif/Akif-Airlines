@@ -1,0 +1,60 @@
+﻿@model Web12412412.Models.Bilet
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Bilet</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="KalkisYeri" class="control-label"></label>
+                <input asp-for="KalkisYeri" class="form-control" />
+                <span asp-validation-for="KalkisYeri" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VarisYeri" class="control-label"></label>
+                <input asp-for="VarisYeri" class="form-control" />
+                <span asp-validation-for="VarisYeri" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GidisTarihi" class="control-label"></label>
+                <input asp-for="GidisTarihi" class="form-control" />
+                <span asp-validation-for="GidisTarihi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DonusTarihi" class="control-label"></label>
+                <input asp-for="DonusTarihi" class="form-control" />
+                <span asp-validation-for="DonusTarihi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KalkisSaat" class="control-label"></label>
+                <input asp-for="KalkisSaat" class="form-control" />
+                <span asp-validation-for="KalkisSaat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UcakId" class="control-label"></label>
+                <select asp-for="UcakId" class ="form-control" asp-items="ViewBag.UcakId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="KoltukNumarasi" class="control-label"></label>
+                <input asp-for="KoltukNumarasi" class="form-control" />
+                <span asp-validation-for="KoltukNumarasi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

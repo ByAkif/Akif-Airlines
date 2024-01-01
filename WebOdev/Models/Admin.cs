@@ -1,9 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace WebOdev.Models
+namespace Web12412412.Models
 {
+    [Table("AdminTbl")]
     public class Admin
     {
+
         [Key]
         public int AdminId { get; set; }
 
@@ -15,6 +18,7 @@ namespace WebOdev.Models
         [Display(Name = "Şifre")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
+
 
     }
 }

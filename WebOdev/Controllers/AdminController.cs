@@ -1,47 +1,80 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WebOdev.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.View;
+using Web12412412.Models;
 
-namespace WebOdev.Controllers
+namespace Web12412412.Controllers
 {
     public class AdminController : Controller
     {
-
-        BiletContext BiletC = new BiletContext();
+        BiletContext BiletContext = new BiletContext();
 
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Adminlogin()
+        public IActionResult Login()
         {
             if (HttpContext.Session.GetString("SessionAdmin") != null)
             {
-                return RedirectToAction("Deshboard");
+                var cookoption = new CookieOptions();
+                {
+                cookoption.Expires = DateTime.Now.AddDays(1);
+                }
+                Response.Cookies.Append("Admin", HttpContext.Session.GetString("SessionAdmin"), cookoption);
+                return RedirectToAction("Index", "Admin");
             }
-            else
-                ViewBag.Message = "Lütfen giriş yapınız.";  
+
             return View();
         }
 
         [HttpPost]
-        public IActionResult Adminlogin(Admin login)
+        [ValidateAntiForgeryToken]
+        public IActionResult Login(Admin admin)
         {
-            var x = BiletC.AdminLogin.Where(s => s.AdminName == login.AdminName && s.Password == login.Password).FirstOrDefault();
-            if (x != null)
+            
+            var login = BiletContext.Adminler.Where(x => x.AdminName == admin.AdminName && x.Password == admin.Password).FirstOrDefault();
+            if (login != null)
             {
-                HttpContext.Session.SetString("SessionAdmin", x.AdminName);
-                return RedirectToAction("Deshboard");
+                HttpContext.Session.SetString("SessionAdmin", admin.AdminName);
+                var cookoption = new CookieOptions();
+                {
+                    cookoption.Expires = DateTime.Now.AddDays(1);
+                }
+                Response.Cookies.Append("Admin", HttpContext.Session.GetString("SessionAdmin"), cookoption);
+                return RedirectToAction("Index", "Admin");
             }
             else
             {
-                ViewBag.Message = "Kullanıcı adı veya şifre yanlış";
+                ViewBag.Message = "Kullanıcı adı veya şifre hatalı";
                 return View();
             }
         }
-        public IActionResult Deshboard()
+        public IActionResult UcakEkle()
         {
-            return View();
+            if (HttpContext.Session.GetString("SessionAdmin") is null)
+            {
+                ViewBag.Message = "Lütfen Login olunuz";
+                return RedirectToAction("Login", "Admin");
+            }
+            else
+            {
+                return View();
+            }
         }
+
+        public IActionResult Cikis()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Login", "Admin");
+        }
+
+
+
     }
+
+     
+
+    
 }

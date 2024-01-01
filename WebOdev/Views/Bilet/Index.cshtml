@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Web12412412.Models.Bilet>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.KalkisYeri)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VarisYeri)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GidisTarihi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DonusTarihi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KalkisSaat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ucak)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KoltukNumarasi)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.KalkisYeri)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VarisYeri)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GidisTarihi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonusTarihi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KalkisSaat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ucak.UcakAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KoltukNumarasi)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.BiletId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.BiletId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.BiletId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

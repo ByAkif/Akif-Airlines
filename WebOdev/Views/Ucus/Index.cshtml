@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Web12412412.Models.Ucus>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nereden)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nereye)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GidisTarihi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DonusTarihi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KalkisSaat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VarisSaat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.doluKoltukSayisi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ucak)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nereden)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nereye)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GidisTarihi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonusTarihi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KalkisSaat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VarisSaat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.doluKoltukSayisi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ucak.UcakAdi)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.UcusId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.UcusId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.UcusId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

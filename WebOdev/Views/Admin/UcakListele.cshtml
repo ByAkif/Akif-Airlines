@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Web12412412.Models.Ucak>
+
+@{
+    ViewData["Title"] = "UcakListele";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h1>UcakListele</h1>
+
+<p>
+    <a asp-action="UcakEkle">Ucak Ekle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UcakAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KoltukSayisi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fiyat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.doluKoltukSayisi)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UcakAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KoltukSayisi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fiyat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.doluKoltukSayisi)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.UcakId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.UcakId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.UcakId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

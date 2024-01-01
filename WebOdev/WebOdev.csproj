@@ -7,6 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\fonts\**" />
+    <Compile Remove="wwwroot\images\**" />
+    <Content Remove="wwwroot\fonts\**" />
+    <Content Remove="wwwroot\images\**" />
+    <EmbeddedResource Remove="wwwroot\fonts\**" />
+    <EmbeddedResource Remove="wwwroot\images\**" />
+    <None Remove="wwwroot\fonts\**" />
+    <None Remove="wwwroot\images\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\css\animate.css" />
     <None Include="wwwroot\css\bootstrap.css" />
     <None Include="wwwroot\css\custom.css" />
@@ -18,40 +29,6 @@
     <None Include="wwwroot\css\owl.carousel.css" />
     <None Include="wwwroot\css\SidebarNav.min.css" />
     <None Include="wwwroot\css\style.css" />
-    <None Include="wwwroot\fonts\fontawesome-webfont.eot" />
-    <None Include="wwwroot\fonts\fontawesome-webfont.svg" />
-    <None Include="wwwroot\fonts\fontawesome-webfont.ttf" />
-    <None Include="wwwroot\fonts\fontawesome-webfont.woff" />
-    <None Include="wwwroot\fonts\fontawesome-webfont.woff2" />
-    <None Include="wwwroot\fonts\FontAwesome.otf" />
-    <None Include="wwwroot\fonts\glyphicons-halflings-regular.eot" />
-    <None Include="wwwroot\fonts\glyphicons-halflings-regular.ttf" />
-    <None Include="wwwroot\fonts\glyphicons-halflings-regular.woff" />
-    <None Include="wwwroot\fonts\glyphicons-halflings-regular.woff2" />
-    <None Include="wwwroot\images\1.jpg" />
-    <None Include="wwwroot\images\2.jpg" />
-    <None Include="wwwroot\images\3.jpg" />
-    <None Include="wwwroot\images\4.jpg" />
-    <None Include="wwwroot\images\a.png" />
-    <None Include="wwwroot\images\i1.png" />
-    <None Include="wwwroot\images\i2.png" />
-    <None Include="wwwroot\images\i3.png" />
-    <None Include="wwwroot\images\i4.png" />
-    <None Include="wwwroot\images\img-sprite.png" />
-    <None Include="wwwroot\images\img1.png" />
-    <None Include="wwwroot\images\lock.png" />
-    <None Include="wwwroot\images\mail.png" />
-    <None Include="wwwroot\images\search-icon.png" />
-    <None Include="wwwroot\images\slider1.jpg" />
-    <None Include="wwwroot\images\slider2.jpg" />
-    <None Include="wwwroot\images\slider3.jpg" />
-    <None Include="wwwroot\images\slider4.jpg" />
-    <None Include="wwwroot\images\slider5.jpg" />
-    <None Include="wwwroot\images\slider6.jpg" />
-    <None Include="wwwroot\images\slider7.jpg" />
-    <None Include="wwwroot\images\tick.png" />
-    <None Include="wwwroot\images\user.png" />
-    <None Include="wwwroot\images\weather.jpg" />
     <None Include="wwwroot\js\amcharts.js" />
     <None Include="wwwroot\js\bootstrap.js" />
     <None Include="wwwroot\js\Chart.bundle.js" />

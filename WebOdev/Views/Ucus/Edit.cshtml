@@ -1,0 +1,67 @@
+﻿@model Web12412412.Models.Ucus
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Ucus</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="UcusId" />
+            <div class="form-group">
+                <label asp-for="Nereden" class="control-label"></label>
+                <input asp-for="Nereden" class="form-control" />
+                <span asp-validation-for="Nereden" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nereye" class="control-label"></label>
+                <input asp-for="Nereye" class="form-control" />
+                <span asp-validation-for="Nereye" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GidisTarihi" class="control-label"></label>
+                <input asp-for="GidisTarihi" class="form-control" />
+                <span asp-validation-for="GidisTarihi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DonusTarihi" class="control-label"></label>
+                <input asp-for="DonusTarihi" class="form-control" />
+                <span asp-validation-for="DonusTarihi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KalkisSaat" class="control-label"></label>
+                <input asp-for="KalkisSaat" class="form-control" />
+                <span asp-validation-for="KalkisSaat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VarisSaat" class="control-label"></label>
+                <input asp-for="VarisSaat" class="form-control" />
+                <span asp-validation-for="VarisSaat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UcakId" class="control-label"></label>
+                <select asp-for="UcakId" class="form-control" asp-items="ViewBag.UcakId"></select>
+                <span asp-validation-for="UcakId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="doluKoltukSayisi" class="control-label"></label>
+                <input asp-for="doluKoltukSayisi" class="form-control" />
+                <span asp-validation-for="doluKoltukSayisi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -5,25 +5,29 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using WebOdev.Models;
+using Web12412412.Models;
 
-namespace WebOdev.Controllers
+namespace Web12412412.Controllers
 {
     public class UcakController : Controller
     {
-        private readonly BiletContext _context;
-
-        public UcakController(BiletContext biletContext)
-        {
-			_context = biletContext;
-        }
+        BiletContext _context = new BiletContext();
 
         // GET: Ucak
         public async Task<IActionResult> Index()
         {
-              return _context.Ucaklar != null ? 
-                          View(await _context.Ucaklar.ToListAsync()) :
-                          Problem("Entity set 'BiletContext.Ucaklar'  is null.");
+            if(HttpContext.Session.GetString("SessionAdmin") != null)
+            {
+                return _context.Ucaklar != null ?
+                       View(await _context.Ucaklar.ToListAsync()) :
+                       Problem("Entity set 'BiletContext.Ucaklar'  is null.");
+            }
+            else
+            {
+                TempData["Mesaj2"] = "Lütfen Login olunuz";
+                return RedirectToAction("Login", "Admin");
+            }
+           
         }
 
         // GET: Ucak/Details/5

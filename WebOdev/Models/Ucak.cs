@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace WebOdev.Models
+namespace Web12412412.Models
 {
     public class Ucak
     {
@@ -18,9 +19,11 @@ namespace WebOdev.Models
         [Required(ErrorMessage = "Lütfen fiyatı giriniz.")]
         [Display(Name = "Fiyat")]
 
-        public double Fiyat { get; set; } 
+        public double Fiyat { get; set; }
 
         public int doluKoltukSayisi { get; set; } = 0;
+
+        public ICollection<Koltuk> Koltuk { get; set; }
 
     }
 }

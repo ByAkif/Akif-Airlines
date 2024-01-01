@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace WebOdev.Models
+namespace Web12412412.Models
 {
+    [Table("BiletTbl")]
     public class Bilet
     {
         [Key]
@@ -9,6 +11,7 @@ namespace WebOdev.Models
 
         [Required(ErrorMessage = "Kalkış yeri giriniz.")]
         [Display(Name = "Kalkış Yeri")]
+
         public string KalkisYeri { get; set; }
 
         [Required(ErrorMessage = "Varış yeri giriniz.")]
@@ -18,25 +21,25 @@ namespace WebOdev.Models
         [Required(ErrorMessage = "Gidiş tarihi giriniz.")]
         [Display(Name = "Gidiş Tarihi")]
         [DataType(DataType.Date)]
-        public string GidisTarihi { get; set; }
+        public DateTime GidisTarihi { get; set; }
 
         [Required(ErrorMessage = "Dönüş tarihi giriniz.")]
         [Display(Name = "Dönüş Tarihi")]
         [DataType(DataType.Date)]
-        public string DonusTarihi { get; set; }
+        public DateTime DonusTarihi { get; set; }
 
         [Required(ErrorMessage = "Kalkış saati giriniz.")]
         [Display(Name = "Kalkış Saati")]
+        [DataType(DataType.Time)]
         public string KalkisSaat { get; set; }
-
         public int UcakId { get; set; }
 
         public virtual Ucak Ucak { get; set; }
 
         [Required(ErrorMessage = "Koltuk numarası seciniz.")]
         [Display(Name = "Koltuk Numarası")]
-       
+        [Range(1, 100, ErrorMessage = "Koltuk numarası 1 ile 500 arasında olmalıdır.")]
+        public int KoltukNumarasi { get; set; }
         public ICollection<Koltuk> Koltuklar { get; set; }
-
     }
 }

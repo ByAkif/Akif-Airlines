@@ -1,43 +1,43 @@
-﻿@model WebOdev.Models.Ucak
+﻿@model Web12412412.Models.Ucak
 
 @{
     ViewData["Title"] = "Details";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
 }
 
-<h2>Details</h2>
+<h1>Details</h1>
 
 <div>
     <h4>Ucak</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
+    <dl class="row">
+        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.UcakAdi)
         </dt>
-        <dd>
+        <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.UcakAdi)
         </dd>
-        <dt>
+        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.KoltukSayisi)
         </dt>
-        <dd>
+        <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.KoltukSayisi)
         </dd>
-        <dt>
+        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Fiyat)
         </dt>
-        <dd>
+        <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Fiyat)
         </dd>
-        <dt>
+        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.doluKoltukSayisi)
         </dt>
-        <dd>
+        <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.doluKoltukSayisi)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.UcakId">Edit</a> |
+    <a asp-action="Edit" asp-route-id="@Model?.UcakId">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
