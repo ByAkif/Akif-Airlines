@@ -7,27 +7,19 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Web12412412.Models;
 
-namespace Web12412412.Controllers
+namespace WebOdev.Controllers
 {
     public class SehirController : Controller
     {
         BiletContext _context = new BiletContext();
 
+
         // GET: Sehir
         public async Task<IActionResult> Index()
         {
-            if (HttpContext.Session.GetString("SessionAdmin") != null)
-            {
-                return _context.Sehir != null ?
+              return _context.Sehir != null ? 
                           View(await _context.Sehir.ToListAsync()) :
                           Problem("Entity set 'BiletContext.Sehir'  is null.");
-            }
-            else
-            {
-                TempData["Mesaj6"] = "Lütfen Login olunuz";
-                return RedirectToAction("Login", "Admin");
-            }
-           
         }
 
         // GET: Sehir/Details/5
@@ -39,7 +31,7 @@ namespace Web12412412.Controllers
             }
 
             var sehir = await _context.Sehir
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.SehirId == id);
             if (sehir == null)
             {
                 return NotFound();
@@ -59,7 +51,7 @@ namespace Web12412412.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,SehirAdi")] Sehir sehir)
+        public async Task<IActionResult> Create([Bind("SehirId,SehirAdi")] Sehir sehir)
         {
             if (ModelState.IsValid)
             {
@@ -91,9 +83,9 @@ namespace Web12412412.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,SehirAdi")] Sehir sehir)
+        public async Task<IActionResult> Edit(int id, [Bind("SehirId,SehirAdi")] Sehir sehir)
         {
-            if (id != sehir.Id)
+            if (id != sehir.SehirId)
             {
                 return NotFound();
             }
@@ -107,7 +99,7 @@ namespace Web12412412.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!SehirExists(sehir.Id))
+                    if (!SehirExists(sehir.SehirId))
                     {
                         return NotFound();
                     }
@@ -130,7 +122,7 @@ namespace Web12412412.Controllers
             }
 
             var sehir = await _context.Sehir
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.SehirId == id);
             if (sehir == null)
             {
                 return NotFound();
@@ -160,7 +152,7 @@ namespace Web12412412.Controllers
 
         private bool SehirExists(int id)
         {
-          return (_context.Sehir?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.Sehir?.Any(e => e.SehirId == id)).GetValueOrDefault();
         }
     }
 }

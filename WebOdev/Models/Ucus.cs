@@ -42,9 +42,11 @@ namespace Web12412412.Models
         public int doluKoltukSayisi { get; set; } = 0;
         public int UcakId { get; set; }
         public Ucak Ucak { get; set; }
-        public ICollection<Koltuk> Koltuk { get; set; }
-        public ICollection<Sehir> Sehir { get; set; }
 
+        public int koltukId { get; set; }
 
+        public Koltuk koltuk { get; set; }
+        public int SehirId { get; set; }
+        public Sehir Sehir { get; set; }
     }
 }

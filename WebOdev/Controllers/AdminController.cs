@@ -70,11 +70,6 @@ namespace Web12412412.Controllers
             return RedirectToAction("Login", "Admin");
         }
 
-
-
-    }
-
-     
-
+    }     
     
 }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Web12412412.Models;
 
@@ -11,9 +12,10 @@ using Web12412412.Models;
 namespace WebOdev.Migrations
 {
     [DbContext(typeof(BiletContext))]
-    partial class BiletContextModelSnapshot : ModelSnapshot
+    [Migration("20240101185420_bha")]
+    partial class bha
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -107,11 +109,16 @@ namespace WebOdev.Migrations
                     b.Property<int>("UcakId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("UcusId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("BiletId");
 
                     b.HasIndex("UcakId");
+
+                    b.HasIndex("UcusId");
 
                     b.ToTable("Koltuk");
                 });
@@ -173,7 +180,12 @@ namespace WebOdev.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("UcusId")
+                        .HasColumnType("int");
+
                     b.HasKey("SehirId");
+
+                    b.HasIndex("UcusId");
 
                     b.ToTable("Sehir");
                 });
@@ -230,9 +242,6 @@ namespace WebOdev.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("SehirId")
-                        .HasColumnType("int");
-
                     b.Property<int>("UcakId")
                         .HasColumnType("int");
 
@@ -243,16 +252,9 @@ namespace WebOdev.Migrations
                     b.Property<int>("doluKoltukSayisi")
                         .HasColumnType("int");
 
-                    b.Property<int>("koltukId")
-                        .HasColumnType("int");
-
                     b.HasKey("UcusId");
 
-                    b.HasIndex("SehirId");
-
                     b.HasIndex("UcakId");
-
-                    b.HasIndex("koltukId");
 
                     b.ToTable("Ucuslar");
                 });
@@ -288,34 +290,33 @@ namespace WebOdev.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Web12412412.Models.Ucus", null)
+                        .WithMany("Koltuk")
+                        .HasForeignKey("UcusId");
+
                     b.Navigation("Ucak");
+                });
+
+            modelBuilder.Entity("Web12412412.Models.Sehir", b =>
+                {
+                    b.HasOne("Web12412412.Models.Ucus", "Ucus")
+                        .WithMany("Sehir")
+                        .HasForeignKey("UcusId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Ucus");
                 });
 
             modelBuilder.Entity("Web12412412.Models.Ucus", b =>
                 {
-                    b.HasOne("Web12412412.Models.Sehir", "Sehir")
-                        .WithMany("Ucus")
-                        .HasForeignKey("SehirId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Web12412412.Models.Ucak", "Ucak")
                         .WithMany()
                         .HasForeignKey("UcakId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Web12412412.Models.Koltuk", "koltuk")
-                        .WithMany("Ucus")
-                        .HasForeignKey("koltukId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Sehir");
-
                     b.Navigation("Ucak");
-
-                    b.Navigation("koltuk");
                 });
 
             modelBuilder.Entity("Web12412412.Models.Bilet", b =>
@@ -323,21 +324,21 @@ namespace WebOdev.Migrations
                     b.Navigation("Koltuklar");
                 });
 
-            modelBuilder.Entity("Web12412412.Models.Koltuk", b =>
-                {
-                    b.Navigation("Ucus");
-                });
-
             modelBuilder.Entity("Web12412412.Models.Sehir", b =>
                 {
                     b.Navigation("Biletler");
-
-                    b.Navigation("Ucus");
                 });
 
             modelBuilder.Entity("Web12412412.Models.Ucak", b =>
                 {
                     b.Navigation("Koltuk");
+                });
+
+            modelBuilder.Entity("Web12412412.Models.Ucus", b =>
+                {
+                    b.Navigation("Koltuk");
+
+                    b.Navigation("Sehir");
                 });
 #pragma warning restore 612, 618
         }

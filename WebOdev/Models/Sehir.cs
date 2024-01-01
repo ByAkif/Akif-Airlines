@@ -6,12 +6,13 @@ namespace Web12412412.Models
     public class Sehir
     {
         [Key]
-        public int Id { get; set; }
+        public int SehirId { get; set; }
 
         [Display(Name = "Şehir Adı")]
         public string SehirAdi { get; set; }
+        public ICollection<Bilet> Biletler { get; set; }
 
-        public Ucus Ucus { get; set; } 
+        public ICollection<Ucus> Ucus { get; set; }
 
     }
 }

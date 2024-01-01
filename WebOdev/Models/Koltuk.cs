@@ -8,5 +8,8 @@
 
         public int UcakId { get; set; }
         public Ucak Ucak { get; set; }
+        public ICollection<Ucus> Ucus { get; set; }
+
+
     }
 }

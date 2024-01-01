@@ -23,7 +23,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Bilet" asp-action="Create">Bilet İşlemleri</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Bilet" asp-action="Index">Bilet Kontrol</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Bilet" asp-action="Index">Bilet Sorgula</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Kullanici" asp-action="Profil">Profil</a>
@@ -39,6 +39,33 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Kullanici" asp-action="Cikis">Çıkış</a>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <button type="button" 
+                                    class="btn btn-primary dropdown-toggle" 
+                                    data-bs-toggle="dropdown"> Diller
+								</button>
+								<ul class="dropdown-menu">
+                                    <li>
+                                        <a 
+                                            asp-controller="Home" 
+                                            asp-action="ChangeLanguage" 
+                                            asp-route-culture="en-US" 
+                                            class="dropdown-item">
+                                            <i class="flag-icon flag-icon-gb"> </i> English
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a asp-controller="Home"
+                                        asp-action="ChangeLanguage"
+                                        asp-route-culture="tr-TR"
+                                        class="dropdown-item">
+                                            <i class="flag-icon flag-icon-gb"> </i> Türkçe
+                                        </a>
+                                    </li>
+								</ul>
+                            </div>
                         </li>
                     </ul>
                 </div>

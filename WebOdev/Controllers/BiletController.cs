@@ -13,7 +13,6 @@ namespace WebOdev.Controllers
     {
         BiletContext _context = new BiletContext();
 
-
         // GET: Bilet
         public async Task<IActionResult> Index()
         {
@@ -54,6 +53,11 @@ namespace WebOdev.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("BiletId,KalkisYeri,VarisYeri,GidisTarihi,DonusTarihi,KalkisSaat,UcakId,KoltukNumarasi")] Bilet bilet)
         {
+            List<Sehir> sehirListesi = _context.Sehir.ToList();
+
+            ViewBag.SehirListesi = new SelectList(sehirListesi, "Id", "SehirAdi");
+
+
             if (ModelState.IsValid)
             {
                 _context.Add(bilet);
@@ -159,5 +163,6 @@ namespace WebOdev.Controllers
         {
           return (_context.Biletler?.Any(e => e.BiletId == id)).GetValueOrDefault();
         }
+
     }
 }

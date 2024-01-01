@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Web12412412.Models
@@ -41,5 +42,7 @@ namespace Web12412412.Models
         [Range(1, 100, ErrorMessage = "Koltuk numarası 1 ile 500 arasında olmalıdır.")]
         public int KoltukNumarasi { get; set; }
         public ICollection<Koltuk> Koltuklar { get; set; }
+        public int SehirId { get; set; }
+        public Sehir Sehir { get; set; }
     }
 }
