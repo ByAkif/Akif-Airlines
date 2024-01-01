@@ -13,7 +13,6 @@ namespace WebOdev.Controllers
     {
         BiletContext _context = new BiletContext();
 
-
         // GET: Sehir
         public async Task<IActionResult> Index()
         {

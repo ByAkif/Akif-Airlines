@@ -12,7 +12,6 @@ namespace Web12412412.Models
 
         [Required(ErrorMessage = "Kalkış yeri giriniz.")]
         [Display(Name = "Kalkış Yeri")]
-
         public string KalkisYeri { get; set; }
 
         [Required(ErrorMessage = "Varış yeri giriniz.")]

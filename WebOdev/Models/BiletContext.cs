@@ -21,8 +21,7 @@ namespace Web12412412.Models
 
         public DbSet<Ucus> Ucuslar { get; set; }
 
-        public DbSet<Web12412412.Models.Sehir>? Sehir { get; set; }
-
+        public DbSet<Sehir> Sehir { get; set; }
 
     }
 }
