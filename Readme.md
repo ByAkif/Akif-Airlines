@@ -6,4 +6,4 @@ Bu proje Akif Airlines web uygulaması içindir.
 
 Aşağıda giriş ekranının bir görüntüsünü bulabilirsiniz:
 
-![Giris Resim](./wwwroot/images/Giris.png)
+![Giris Resim]("C:\Users\MAkif\Desktop\Web\Akif-Airlines\WebOdev\wwwroot\images\Giris.png")
